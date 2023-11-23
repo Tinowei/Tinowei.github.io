@@ -89,13 +89,13 @@ p.discount{
     position: relative;
 }
 article{
-    margin: 10px 0;
+    /* margin: 10px 0; */
 }
 article,
 .price,
 .star,
 .sales {
-    margin-bottom: 10px; 
+    margin-bottom: 15px; 
 }
 
 article p{
@@ -136,9 +136,10 @@ article p{
     margin-bottom: 0px;
 }
 .star{
-    margin-top: -20px;
+    margin-top: -18px;
     /* why? */
     /* margin-top: 0px; */
+    margin-bottom: 10px;
 }
 
 .star span{
