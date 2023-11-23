@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #000;
+    
+}
+section.menuArea{
+    width: 1200px;
+    display: flex;
+    margin: auto;
+    background-color: #eceaea;
+    /* color: #fff; */
+    font-size: 13px;
+}
+ul.type{
+    display: flex;
+    list-style: none;
+    background-color: #eceaea;
+    /* 從裡面推外層所佔的margin還是一樣 */
+    /* 留白 */
+    /* padding: 15px 0px; */
+    cursor: pointer;
+    
+}
+ul.type li{
+    padding:15px 10px 15px;
+    /* height: 100%; */
+    box-sizing: border-box;
+    text-align: center;
+    color: #000;
+}
+ul.type :first-child{
+    color: #fff;
+}
+
+.type {
+    /* outline: 2px solid red; */
+}
+
+.type li {
+    /* outline: 2px solid blue; */
+    /* line-height: 1.5; */
+}
+
+ul.type li:first-child{
+    background-color: #db497c;
+}
+
+ul.type li:hover{
+    background-color: #db497c;
+    color: #fff;
+
+}
+.priceInput{
+    padding: 15px 15px;
+    
+}
+.priceInput::after{
+    content: "|";
+    color: #827373;
+    padding-left: 5px;
+}
+
+.priceInputbtn{
+    border: solid 1px black;
+    cursor: pointer;
+    background-color: #433e3e;
+    color: #fff;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+ul.checkBox li{
+    color: #000;
+    /* background-color: #bdb6b6; */
+    letter-spacing: 1px;
+    margin: auto;
+    padding-right: 10px;
+    /* padding: 0 5px; */
+}
+
+label{
+    margin-left: 3px;
+    /* padding-bottom: 10px; */
+}
+input[type="checkbox"]{
+    margin:5px 0 0 0;
+}
+input:checked + label{
+    color:#db497c;
+}

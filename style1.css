@@ -1,0 +1,199 @@
+
+section{
+    width: 1200px;
+    display:flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+/* 點線 */
+/* section::after{
+    content: "";
+    border: dotted 1px rgb(34, 33, 33);
+    width: 1200px;
+    position: absolute;
+    top: -5px;
+} */
+.card-group{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+/* 只選中第二個card-group做點線 */
+.card-group:nth-child(2):after{
+    content: "";
+    border-bottom: dotted 1px rgb(34, 33, 33);
+    width: 1200px;
+    position: absolute;
+}
+
+.card{
+    width: 160px;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+}
+.card:hover{
+    background-color: #fafac6;
+    cursor: pointer;
+}
+
+.card:hover:before{
+    content: ">";
+    position: absolute;
+    display: flex;
+    right: 10px;
+    /* top: 0; */
+    top: 60px;
+    font-size: 20px;
+    color: #fff;
+    padding: 15px 10px;
+    background-color: #796e6e7f;
+    border-radius: 5px;
+}
+.card:hover:after{
+    content: "♡ 🛒";
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    letter-spacing: 18px;
+    background-color: #1b1a1a67;
+    padding: 10px 30px;
+    top: 120px;
+    margin: auto;
+    color: #fff;
+}
+/* 模擬換圖片圓點 */
+
+.dot{
+    color: #f5e7e7;
+    display: flex;
+    align-content: center;
+    justify-content: center;   
+}
+
+.dot li:not(.pinkDot){
+    color: #f5e7e7;
+}
+.dot li.pinkDot{
+    color: rgb(245, 24, 116);;
+}
+
+
+p.discount{
+    color: rgb(253, 6, 6);
+    font-size: 14px;
+    /* why ? */
+    margin-bottom: 10px;
+    height: 1.5em;
+    position: relative;
+}
+article{
+    margin: 10px 0;
+}
+article,
+.price,
+.star,
+.sales {
+    margin-bottom: 10px; 
+}
+
+article p{
+    font-size: 16px;
+    color: #6b6262;
+    /* height: 80px; */
+    /* 字太多後方用...替代的方法 */
+    display: -webkit-box;
+    /* 內容只顯示兩行，其餘省略 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+}
+img{
+    width: 100%;
+    height: 160px;
+}
+
+p span{
+    font-size:12px;
+}
+
+p.price {
+    font-size:22px;
+    font-family:'Oxygen', sans-serif;
+    color: rgb(245, 24, 116);
+    position: relative;
+    padding-left: 3px;
+    
+}
+/* 下單再折 */
+p :nth-child(2){
+    color: #796e6e7f;
+}
+article p{
+    margin-bottom: 0px;
+}
+.star{
+    margin-top: -20px;
+    /* why? */
+    /* margin-top: 0px; */
+}
+
+.star span{
+    color:#aaa;
+    padding: 3px;
+}
+
+p.sales{
+    font-size: 12px;
+    color: #1f1e1e;
+    margin-top: -10px;
+    padding-left: 3px;
+    height: 10px;
+    
+}
+
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4px;
+    background-color: #eceaea;
+    position: relative;
+}
+
+li.fast,
+li.gift,
+li.register{
+    padding:2px 5px;
+    margin: 3px 1px;
+    border-radius: 5px;
+    font-size: 12px;
+    align-items: flex-end;
+    color: #fff;
+    /* 靠左還沒做 */
+}
+
+
+li.fast{
+    background-color: #be2121;
+}
+li.register,
+li.gift{
+    background-color: #f3588e;
+}
+
+li.outofstock{
+    background-color: #eceaea;
+    color: #9e9090;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding-right: 30px;
+    margin: 5px 0;
+    font-size: 12px;
+    /* padding-left: 0; */
+    /* padding-top: 0; */
+}
