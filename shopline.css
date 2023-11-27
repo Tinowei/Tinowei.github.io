@@ -246,3 +246,55 @@ section.otherFunctionAndServices h2{
     padding: 0 20px;
 } 
 
+
+
+
+
+/* chatbtn */
+
+btn.chatbtn{
+    position:fixed;
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    background-color: rgb(52, 147, 251);
+    top: 85%;
+    right: 0;
+    margin: 0 20px;
+    
+}
+.chatbtn p{
+    align-items: center;
+    position: absolute;
+    top: 37px;
+    left: 25px;
+    color: rgb(52, 147, 251);
+}
+
+.chatbtn::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 4px;
+    left: 18px;
+    top: 16px;
+}
+.chatbtn::after{
+    content: "";
+    position: absolute;
+    /* width: 10px; */
+    /* height: 10px; */
+    /* background-color: #fff; */
+    left: 36px;
+    top: 46px;
+    border: 6px solid #fff;
+    border-color:  #fff #fff transparent transparent;
+}
+
+a btn.chatbtn:hover{
+   /* 放大效果 */
+   transform: scale(1.1);
+   transition: .2s ease-in-out ;
+}
