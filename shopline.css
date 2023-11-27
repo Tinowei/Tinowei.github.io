@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* outline: solid 2px red; */
+}
+body {
+    margin: auto;
+    color:#052855;
+}
+.briefIntro {
+    text-align: center;
+    background-color: #F7F8F9;
+}
+
+.briefIntro h2 {
+    font-size: 200%;
+    padding: 80px 0 40px 0;
+
+}
+
+.briefIntro article {
+    padding: 0 0 80px 0;
+}
+
+.intro{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    /* outline: solid 3px red; */
+    padding: 80px  0;
+    justify-content: space-between;
+}
+
+.introduction{
+    display: flex;
+}
+
+.introductionContent{
+    width: 50%;
+    /* outline: solid 3px red; */
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0 40px;
+}
+.pic{
+    width: 50%;
+    /* outline: solid 3px red; */
+}
+.introduction img{
+    width: 90%;
+    /* outline: solid 3px red; */
+    box-sizing: border-box;
+    /* margin: 40px; */
+}
+.introductionContent h3{
+    font-size: 175%;
+    box-sizing: border-box;
+    /* margin-left: 10px; */
+   
+}
+.introductionContent p{
+    /* outline: solid 3px red; */
+    margin-top: 20px;
+    line-height: 1.7em;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    padding: 0 5px 0 0;
+
+}
+body section.intro .introductionContent ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* outline: solid 3px red; */
+    padding: 30px 0 0 0;
+    box-sizing: border-box;
+    /* margin: 0 50px 0 0; */
+}
+body .intro .introductionContent li{
+    /* outline: solid 1px blue; */
+    box-sizing: border-box;
+    width: 260px;
+    padding: 10px 0;
+}
+
+.introductionContent li .checkimg{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    /* border: 1px solid black; */
+    border-radius: 100%;
+    margin-right: 5px;
+    background-color: #54b5f1;
+    position: relative;
+    top: 5px;
+    right: -5px;
+}
+/* 勾勾 */
+.introductionContent li .checkimg::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    /* background-color: #fefefe; */
+    border-right: 3px solid #2663e6;
+    border-bottom:3px solid #2663e6;
+    rotate: 45deg;
+    right: 7px;
+    top: 3px;
+}
+
+.link a{
+    padding: 50px 0 0 0 ;
+    text-decoration: none;
+    color: #0061FF;
+}
+
+/* 超連結底線 */
+.link a:first-of-type{
+    border-bottom: 2px solid #0061FF;
+}
+
+.link a:nth-child(2){
+    display: inline-block;
+    left: 5px;
+    margin-left: 5px;
+    position: relative;
+    font-weight: 900;
+    /* key !!!!!!! */
+    transition: left .3s ease-in-out; 
+}
+
+.link a btn.pointBtn:after{
+    content: "";
+    /* font-weight: ; */
+    width: 8px;
+    height: 8px;
+    /* border: 2px solid #0061FF; */
+    position: absolute;
+    display: inline-block;
+    top: 56px;
+    left: 5px;
+    rotate: -45deg;
+    border-right:  2px solid #0061FF;
+    border-bottom: 2px solid #0061FF;
+    transition: .5s;
+}
+.link a:nth-child(2):hover{
+    left: 11px;
+}
+
+/* intro2 的order順序 */
+section.intro.intro2 .introduction .introductionContent{
+    order: 2;
+
+
+}
+
+section.intro.intro2 .introduction .introductionContent{
+    box-sizing: border-box;
+    margin: auto;
+}
+
+
+
+/* intro4的order順序 */
+.intro.intro4 .introduction .introductionContent{
+    order: 2;
+}
+
+/* intro5  */
+.intro.intro5 .introduction .introductionContent{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 更多功能與服務 */
+section.otherFunctionAndServices{
+    background-color: #F7F8F9;
+    /* outline: solid 3px red; */
+
+}
+
+
+section.otherFunctionAndServices h2{
+    margin: auto;
+    text-align: center;
+    font-size: 200%;
+    padding: 80px 0 80px 0;
+     /* outline: solid 1px red; */
+}
+.services-group{
+     /* outline: solid 1px red; */
+    width: 1200px;
+    /* key!!!!!!!!! */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 設定立個服務排法 */
+.services-group .service{
+    /* 3個3個排 */
+    width: 400px;
+    margin-bottom: 150px;
+}
+
+.services-group .service{
+    box-sizing: border-box;
+}
+
+
+.services-group .service .circle{
+    width: 96px;
+    height: 96px;
+    border-radius: 100%;
+    /* border: 1px solid black; */
+    background-color: #fff;
+    /* 圓圈置中 */
+    margin:auto;
+}
+/* services-group的h3  */
+.services-group .service h3{
+    line-height: 1.5em;
+    font-size: 125%;
+    text-align: center;
+    padding: 40px 0 20px 0;
+} 
+/* services-group 的p */
+.services-group .service p{
+    text-align: center;
+    padding: 0 20px;
+} 
+
