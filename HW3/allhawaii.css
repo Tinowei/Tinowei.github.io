@@ -90,6 +90,7 @@ a:hover {
 
 .bigNews a.news .text h3 {
     width: 50%;
+    /* box-sizing: border-box; */
     padding-right: 20px;
     /* outline:2px solid red; */
 }
@@ -98,6 +99,7 @@ a:hover {
     /* outline:2px solid red; */
     display: flex;
     flex-direction: column;
+    /* margin-bottom: 20px; */
 }
 
 .briefContent p {
@@ -132,7 +134,7 @@ a:hover {
 .smallNews-list a.news {
     /* outline:2px solid red; */
     box-sizing: border-box;
-    padding: 0 20px 10px 20px;
+    padding: 5px 20px 10px 20px;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -143,6 +145,7 @@ a:hover {
     border-radius: 5%;
 }
 .smallNews-list a.news h3 {
+    /* outline:2px solid red; */
     font-size: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
