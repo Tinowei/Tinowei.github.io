@@ -28,7 +28,7 @@ a:hover {
 .slg {
     display:flex;
     justify-content: space-between;
-    margin: 30px 0 50px 0 ;
+    margin: 30px 0 10px 0 ;
     padding-top: 30px;
     border-top: 2px solid #d5cece;
 }
