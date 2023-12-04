@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .introduction {
+            width: 960px;
+            display: flex;
+            flex-wrap: wrap;
+            /* outline: 2px solid red; */
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .rectangle {
+            width: 500px;
+            height: 250px;
+            /* outline: 2px solid black; */
+            background-color: #ece9e9;
+            /* 讓a距離container50 */
+            margin-bottom: -200px;
+            margin-left: 38%;
+        }
+        a {
+            display: block;
+            position: relative;
+
+        }
+        a img {
+            position: relative;
+            vertical-align: middle;
+
+        }
+
+        a::before {
+            content: '';
+            width: 100px;
+            height: 60px;
+            outline: #000;
+            background-color: rgb(220, 23, 23);
+            border-radius: 10px;
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            bottom: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 3;
+        }
+        a::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            bottom: 50%;
+            transform: translate(-50%,-50%);
+            clip-path: polygon(0 0,100% 50%,0 100%);
+            z-index: 3;
+        }
+
+       .feature {
+        /* outline: 2px solid blue; */
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        color: #fff;
+        position: absolute;
+        /* 往左退2/5 =-100px */
+        margin-left: -100px;
+        /* 因為.title的h=75，img距離container50px，因此要使他切齊需要再讓.feature往上25px */
+        margin-top: -25px;
+       } 
+
+       .feature .title {
+        /* outline: 2px solid orange; */
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+       }
+       .title .label,
+       .title .slg {
+        height: 75px;
+        background-color: rgb(177, 26, 26);
+       } 
+
+        .label {
+        font-size: 75px;
+        writing-mode: vertical-lr;
+        line-height: 1em;
+       } 
+
+       .slg {
+        line-height: 2.5em;
+        font-size: 32px;
+
+       }
+
+       .text {
+        background-color: #000;
+        padding: 5px 15px 10px 15px;
+       }
+
+       .feature .text h4 {
+            font-size: 26px;
+
+       }
+
+       .reason {
+        width: 700px;
+        /* outline: 3px solid black; */
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fcedd9;
+        /* 浮上來 */
+        position: relative;
+        /* h4的fz=20,padding-top=10 ->h=30px */
+        margin-top: -30px;
+        /* 往左退1/10=80 */
+        margin-left: -80px;
+        box-sizing: border-box;
+        padding: 0 20px 20px 20px;
+        
+       }
+
+       .reason h4 {
+        /* outline: 5px solid blue; */
+        font-size: 20px;
+        width: 800px;
+        padding: 10px 5px 0px 5px;
+       }
+       .reason .line {
+        width: 400px;
+        display: inline-block;
+        border: 1px solid black;
+       }
+
+       .reason .design {
+        background-color: #000;
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: 3px;
+        margin: 8px 5px;
+       }
+
+       ul {
+        width: 700px;
+        list-style:square;
+        margin: 0 30px;
+        color: rgb(198, 55, 55);
+       }
+       ul li p {
+        color: #000;
+        line-height: .9em;
+       }
+
+       .introduction:nth-child(even) .feature {
+        margin-left: 700px;
+       }
+
+       .introduction:nth-child(even) a::before,
+       .introduction:nth-child(even) a::after {
+        left: 0;
+       }
+
+       .introduction:nth-child(even) .reason {
+        /* 往右移180 因為.reason的h=700，700+180-(img的width)800=80 */
+        margin-left: 180px;
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+            <div class="introduction">
+                <div class="rectangle"></div>
+                <a href="#">
+                    <img src="./pic/img2.jpeg">
+                </a>
+
+                <div class="feature">
+                    <div class="title">
+                        <div class="label">01</div>
+                        <div class="slg">操控樂趣 </div>
+                    </div>
+                    <div class="text">
+                        <h4>Lorem</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium recusandae veniam iure magnam tenetur consequuntur vel porro aliquam ex suscipit corrupti aut doloremque ipsa, exercitationem reiciendis omnis explicabo expedita voluptatibus!</p>
+                    </div>
+                </div>
+
+                <div class="reason">
+                    <h4>
+                        因為我們做了這些更新
+                        <div class="line"></div>
+                    </h4>
+                    <div class="design">Lorem ipsum dolor sit</div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu</p></li>
+                    </ul>
+                    <div class="design">Lorem ipsum dolor sit </div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatuLorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu</p></li>
+                    </ul>
+                    <div class="design">Lorem ipsum dolor sit </div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                        </p></li>
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="introduction">
+                <div class="rectangle"></div>
+                <a href="#">
+                    <img src="./pic/img2.jpeg">
+                </a>
+
+                <div class="feature">
+                    <div class="title">
+                        <div class="label">01</div>
+                        <div class="slg">操控樂趣 </div>
+                    </div>
+                    <div class="text">
+                        <h4>Lorem</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium recusandae veniam iure magnam tenetur consequuntur vel porro aliquam ex suscipit corrupti aut doloremque ipsa, exercitationem reiciendis omnis explicabo expedita voluptatibus!</p>
+                    </div>
+                </div>
+
+                <div class="reason">
+                    <h4>
+                        因為我們做了這些更新
+                        <div class="line"></div>
+                    </h4>
+                    <div class="design">Lorem ipsum dolor sit</div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu</p></li>
+                    </ul>
+                    <div class="design">Lorem ipsum dolor sit </div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatuLorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu</p></li>
+                    </ul>
+                    <div class="design">Lorem ipsum dolor sit </div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                        </p></li>
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="introduction">
+                <div class="rectangle"></div>
+                <a href="#">
+                    <img src="./pic/img2.jpeg">
+                </a>
+
+                <div class="feature">
+                    <div class="title">
+                        <div class="label">01</div>
+                        <div class="slg">操控樂趣 </div>
+                    </div>
+                    <div class="text">
+                        <h4>Lorem</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium recusandae veniam iure magnam tenetur consequuntur vel porro aliquam ex suscipit corrupti aut doloremque ipsa, exercitationem reiciendis omnis explicabo expedita voluptatibus!</p>
+                    </div>
+                </div>
+
+                <div class="reason">
+                    <h4>
+                        因為我們做了這些更新
+                        <div class="line"></div>
+                    </h4>
+                    <div class="design">Lorem ipsum dolor sit</div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu</p></li>
+                    </ul>
+                    <div class="design">Lorem ipsum dolor sit </div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatuLorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu</p></li>
+                    </ul>
+                    <div class="design">Lorem ipsum dolor sit </div>
+                    <ul>
+                        <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus similique pariatu
+                            elit. Possimus similique pariatu
+                        </p></li>
+                    </ul>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</body>
+</html>
