@@ -4,34 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinowei</title>
+    <title>Document</title>
     <style>
-        *{
-            padding: 0;
+        * {
             margin: 0;
-        }
-        body {
-            background-color: #ffdbbe;
-        }
-        .container {
-            /* outline: 1px solid #595759; */
-            width: 1200px;
-            /* height: 100vh; */
-            text-align: center;
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            line-height: 100px;
-        }
-        .profile {
-            /* outline: 1px solid #595759;/ */
-            align-items: center;
+            padding: 0;
         }
 
+        body {
+            background-color: #ffdbbe;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            width: 960px;
+            /* outline: 2px solid black; */
+            margin: auto;
+            position: relative;
+            top: -50px;
+        }
+
+        .flex{
+            display: flex;
+            flex-wrap: wrap;
+            transform: rotate(30deg);
+
+        }
+        .item {
+            /* outline: 2px solid red; */
+            width: 192px;
+            height: 192px;
+            transform: rotate(-30deg);
+        }
+        .item.profile {
+            /* position: relative; */
+            display: flex;
+            flex-wrap: wrap;
+            transform: rotate(-30deg);
+        }
+
+    
         .profile-circle {
-            width: 400px;
-            height: 400px;
+            box-sizing: border-box;
+            display: flex;
+            width: 192px;
+            height: 192px;
             border-radius: 100%;
             /* outline: 1px solid #595759; */
             position: relative;
@@ -40,23 +57,23 @@
             transition: .4s ;
         }
         .profile-circle img {
-            width: 700px;
-            height: 400px;
+            width: 300px;
+            height: 190px;
+            /* width: 100%; */
+            /* height: 100%; */
+            /* transform: scale(1.5); */
             position: absolute;
             /* width: 100%; */
             border-radius: 100%;
-            left: -125px;
-        }
-        .profile {
-            padding: 100px;
+            left: -40px;
         }
 
         .profile-relay {
             position: relative;
             background: rgba(0,0,0,0.5);
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 192px;
+            height: 192px;
             border-radius: 100%;
             opacity: 0;
             text-align: center;
@@ -66,11 +83,13 @@
             text-decoration: none;
             font-weight: 900;
             color: #e8e6e8;
-            font-size: 40px;
+            font-size: 20px;
             text-align: center;
             position: absolute;
-            top:25%;
-            left: 15%;
+            top:60px;
+            left: 25px;
+
+
         }
         .profile-circle:hover {
             box-shadow: none;
@@ -82,62 +101,129 @@
             transition: .4s;
         }
 
-
-        .file {
-            /* outline: 2px solid red; */
-            width: 100%;
-            position: relative;
-            margin-top: 20px;
+        .circle {
+            display: flex;
+            width: 130px;
+            height: 130px;
+            border-radius: 100%;
+            /* border: 1px solid black; */
+            background-color: #cdd1ce;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
         }
-        .file a {
+
+        .circle:hover {
+            transform: scale(1.2);
+            transition: .3s;
+        }
+
+        .homework {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .homework a {
+            color:#000;
+            text-decoration: none;
             display: inline-block;
             position: relative;
-            text-decoration: none;
-            /* outline: 2px solid red; */
-            padding: 10px;
-            color: #000;
-            box-sizing: border-box;
-            border: 2px solid black;
-            border-radius: 20px;
-            /* opacity: 0; */
-            transition: .4s;
+            
         }
-        .file a:hover{
-            /* opacity: 1; */
-            transform: scale(1.2);
-            transition: .4s;
-            z-index: 3;
-            background-color: #ffdbbe;
-        }
-    </style>
+        /* .homework1 {
+            opacity: 0;
+        } */
 
-    
+        /* .item.profile .profile-circle img:hover .homework.homework1 {
+            opacity: 1;
+            transition: .2s;
+        } */
+
+        
+       
+    </style>
 </head>
 <body>
+
     <div class="container">
-        
-        <div class="profile">
-            <div class="profile-circle">
-                <img src="/pic/Bojji.jpeg" alt="">
-                <div class="profile-relay">
-                    <a href="">TING HAN WEI</a>
+        <div class="flex">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item homework homework3">
+                <a href="./HW3/allhawaii.html">
+                    <div class="circle">
+                        <h3>HW3</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item homework homework2">
+                <a href="./HW2/shopline.html">
+                    <div class="circle">
+                        <h3>HW2</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="item profile">
+                <div class="profile-circle">
+                    <img src="./pic/Bojji.jpeg" alt="">
+                    <div class="profile-relay">
+                        <a href="">TING HAN WEI</a>
+                    </div>
                 </div>
-
-        </div>
-
-        <div class="file">
-            <a href="./HW1/product1.html">
-                <h3>HomeWork 1</h3>
-            </a>
-            <a href="./HW2/shopline.html">
-                <h3>HomeWork 2</h3>
-            </a>
-            <a href="./HW3/allhawaii.html">
-                <h3>HomeWork 3</h3>
-            </a>
-        </div>
+            </div>
+            <div class="item homework homework4">
+                <a href="./HW4/toyota01.html">
+                    <div class="circle">
+                        <h3>HW4</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item homework homework1">
+                <a href="./HW1/product1.html">
+                    <div class="circle">
+                        <h3>HW1</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
 
         </div>
     </div>
+
+
+
+    
 </body>
 </html>
+
+
+
+
+
+<a href="">
+    <h3>HomeWork 1</h3>
+</a>
+<a href="">
+    <h3>HomeWork 2</h3>
+</a>
+<a href="">
+    <h3>HomeWork 3</h3>
+</a>
