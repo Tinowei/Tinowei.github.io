@@ -27,8 +27,6 @@
             height: 250px;
             /* outline: 2px solid black; */
             background-color: #ece9e9;
-            /* 讓a距離container50 */
-            /* margin-bottom: -200px; */
             margin-top: 30px;
             margin-left: 45%;
         }
@@ -36,16 +34,12 @@
             /* outline: 3px solid black; */
             display: block;
             position: relative;
-            /* margin-top: -210px; */
-            /* margin-left: 50px; */
             margin: auto;
             top: 75px;
 
         }
         img {
-            /* position: relative; */
             vertical-align: middle;
-            
         }
 
         a .youtube {
@@ -55,12 +49,8 @@
             /* outline: 2px solid #000; */
             background-color: rgb(220, 23, 23);
             border-radius: 10px;
-            /* position: relative; */
             left: 750px;
-            /* top: 0; */
-            /* bottom: 0; */
             top: -280px;
-            /* transform: translate(0,-25%); */
         }
         .youtube .youtube-icon {
             width: 20px;
@@ -83,10 +73,6 @@
         width: 250px;
         color: #fff;
         position: absolute;
-        /* 往左退2/5 =-100px */
-        margin-left: 0px;
-        /* 因為.title的h=75，img距離container50px，因此要使他切齊需要再讓.feature往上25px */
-        /* margin-top: -25px; */
        } 
 
        .feature .title {
@@ -129,13 +115,9 @@
         /* outline: 3px solid black; */
         display: flex;
         flex-wrap: wrap;
-        background-color: #fcedd9;
+        background-color: #eeeeee;
         /* 浮上來 */
         position: relative;
-        /* h4的fz=20,padding-top=10 ->h=30px */
-        /* 因為.youtube佔了h60px */
-        /* 30 + 60 =90  可以使.line和圖片切齊 */
-        /* margin-top: -300px; */
         top: -12px;
         /* 往右退20px */
         margin-left: 20px;
@@ -171,8 +153,9 @@
         margin: 0 30px;
         color: rgb(198, 55, 55);
        }
+
        ul li p {
-        color: #000;
+        color: #a9a9a9;
         line-height: .9em;
        }
 
@@ -193,9 +176,7 @@
        }
 
        .introduction:nth-child(even) .reason {
-        /* 往右移180 因為.reason的h=700，700+180-(img的width)800=80 */
-        /* margin-left: 180px; */
-        /* margin-right: 20px; */
+        /* 960-20+700=240 */
         margin-left: 240px ;
        }
 
