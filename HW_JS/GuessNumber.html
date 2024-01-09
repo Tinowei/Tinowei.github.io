@@ -111,7 +111,7 @@
         }
         .container {
             width: 500px;
-            height: 180px;
+            height: 200px;
             text-align: center;
             /* outline: 2px solid red; */
             border: 3px dotted #fff;
@@ -134,7 +134,9 @@
         input {
             border-radius: 7px;
         }
-
+        input:focus {
+            border-color: #000000; 
+        }
         .keyboard {
             width: 500px;
             margin: 10px auto;
@@ -260,7 +262,7 @@
             let numberInput = document.getElementById('guess');//選到輸入匡
             //把輸入匡的值給guessNumber
             let guessNumber = parseInt(numberInput.value);
-            if(Number.isNaN(guessNumber) || guessNumber<0 || guessNumber >100 || guessNumber >max || guessNumber<min){
+            if(Number.isNaN(guessNumber) || guessNumber<=1 || guessNumber >=100 || guessNumber >max || guessNumber<min){
                 alert('Your input is Out of Range or not a number !! Please enter a legal number !');
             }
             else if ( guessNumber === answer) {
@@ -295,6 +297,9 @@
 
         //重新開始
         function resetGame(){
+            if(gameStarted==false){
+                alert(`You didn't start Game!`);
+            }
             gameStarted = false;
             startGamebtn.disabled = false;
             min = 0;
@@ -359,13 +364,16 @@
         guessNumber=document.getElementById('guess');
 
         function activateButton(button) {
-            button.classList.add('active');
+            if(gameStarted == false){
+                alert(`You didn't start game.`);
+            }else{
+                button.classList.add('active');
+                guessNumber.value+=button.value;
+            }
+            
             setTimeout(function(){
                 button.classList.remove('active')
             },150);
-
-            
-            guessNumber.value+=button.value;
         }
 
         let btnSend=document.querySelector('.btn-group :nth-child(11)');
