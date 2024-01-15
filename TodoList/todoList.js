@@ -24,18 +24,23 @@ function settodoItemsArrayToLS(){
     localStorage.setItem(loaclStorageKey,JSON.stringify(todoItemsArray));
 }
 
-addTodoBtn.addEventListener('click',()=>{
-    let addtodoInputVal=addtodoInput.value.trim();
+addTodoBtn.addEventListener('click', () => {
+    let addtodoInputVal = addtodoInput.value.trim();
+
     if (addtodoInputVal !== '') {
-        addtodoItem(addtodoInputVal);
-        addYourTodoTotodoList(addtodoInputVal);
-        settodoItemsArrayToLS();
-        addtodoInput.value = '';
-    } 
-    else {
+        if (todoItemsArray.some(item => item.Content === addtodoInputVal)) {
+            alert('已有相同事項！');
+            addtodoInput.value='';
+        } else {
+            addtodoItem(addtodoInputVal);
+            addYourTodoTotodoList(addtodoInputVal);
+            settodoItemsArrayToLS();
+            addtodoInput.value = '';
+        }
+    } else {
         alert('請輸入有效的代辦事項');
     }
-})
+});
 //enter
 document.addEventListener('keydown',(event)=>{
     if(event.key === 'Enter' || event.keyCode === 13){
