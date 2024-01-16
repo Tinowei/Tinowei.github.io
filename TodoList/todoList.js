@@ -2,31 +2,27 @@ const addtodoInput = document.querySelector('#input_todo');
 const addTodoBtn = document.querySelector('#add_todo_btn');
 const todoListEl=document.querySelector('.todoList');
 
-//初始化代辦事項陣列
-let todoItemsArray=[];
 let loaclStorageKey='mytodoItems';
-let todoItem=["",false];
 
 window.onload=function(){
-    gettodoItemsArrayFromLS();
+    getTodoItemsArrayFromLs();
     renderingTodoList();
-    settodoItemsArrayToLS();
+    setTodoItemsArrayToLs();
 }
 
-function gettodoItemsArrayFromLS(){
+function getTodoItemsArrayFromLs(){
     todoItemsArray=JSON.parse(localStorage.getItem(loaclStorageKey));
     if(todoItemsArray==null){
         todoItemsArray=[];
     }
 }
 
-function settodoItemsArrayToLS(){
+function setTodoItemsArrayToLs(){
     localStorage.setItem(loaclStorageKey,JSON.stringify(todoItemsArray));
 }
 
 addTodoBtn.addEventListener('click', () => {
     let addtodoInputVal = addtodoInput.value.trim();
-
     if (addtodoInputVal !== '') {
         if (todoItemsArray.some(item => item.Content === addtodoInputVal)) {
             alert('已有相同事項！');
@@ -34,7 +30,7 @@ addTodoBtn.addEventListener('click', () => {
         } else {
             addtodoItem(addtodoInputVal);
             addYourTodoTotodoList(addtodoInputVal);
-            settodoItemsArrayToLS();
+            setTodoItemsArrayToLs();
             addtodoInput.value = '';
         }
     } else {
@@ -48,7 +44,7 @@ document.addEventListener('keydown',(event)=>{
         if (addtodoInputVal !== '') {
             addtodoItem(addtodoInputVal);
             addYourTodoTotodoList(addtodoInputVal);
-            settodoItemsArrayToLS();
+            setTodoItemsArrayToLs();
             addtodoInput.value = '';
         } else {
             alert('請輸入有效的代辦事項');
@@ -98,7 +94,6 @@ function createDOM (item){
         div_todoGroup.append(span_inputGroupText,input_displayTodo,div_modifyAndDelete);
         div_todoItem.append(div_todoGroup);
         todoListEl.append(div_todoItem);
-
         //一個代辦事項的DOM生成完後，替此代辦事項的按鈕及checkbox註冊事件
         addEventListeners(item);
 }
@@ -115,11 +110,8 @@ function renderingTodoList(){
 
 function addEventListeners(item){
     let todoItem = document.getElementById(`${item.Content}`);
-    // 選擇剛剛生成的刪除按鈕
     let deleteBtn = todoItem.querySelector('button.btn-danger');
-    // //選擇剛剛生成的編輯按鈕
     let modifyBtn = todoItem.querySelector('button.btn-warning');
-    // //選擇剛剛生成的checkbox
     let input_checkbox = todoItem.querySelector('span.input-group-text input.form-check-input');
 
     modifyBtn.addEventListener('click', (event) => {
@@ -136,43 +128,39 @@ function addEventListeners(item){
             deleteBtn.disabled = true;
         } else if (!isDisabled) {
             // 保存編輯內容
-            // debugger
             //找到所點擊的那個todoItem，在todoList中的索引位置
             let index = Array.from(todoItem.parentNode.children).indexOf(todoItem);
             //透過找到的索引，去更新Content的內容
             todoItemsArray[index].Content = input_displayTodo.value;
-
             input_displayTodo.setAttribute('value', `${input_displayTodo.value}`);
-            // item.Content = input_displayTodo.value;
             todoItem.setAttribute('id', `${input_displayTodo.value}`)
             input_displayTodo.setAttribute('disabled', '');
             modifyBtn.classList.remove('btn-success');
             modifyBtn.classList.add('btn-warning');
             modifyBtn.textContent = '編輯';
             deleteBtn.disabled = false;
-            // update local storage
-            settodoItemsArrayToLS();
+            setTodoItemsArrayToLs();
         }
     })
 
     deleteBtn.addEventListener('click', () => {
-        //找到所點擊的那個todoItem，在todoList中的索引位置
         let index = Array.from(todoItem.parentNode.children).indexOf(todoItem);
         //透過找到的索引，刪除那筆資料並同時更新localstorage
         todoItemsArray.splice(index, 1);
         todoItem.remove();
-        settodoItemsArrayToLS();
+        setTodoItemsArrayToLs();
         
     })
 
     input_checkbox.addEventListener('click',()=>{
-        item.done = input_checkbox.checked;
+        let index = Array.from(todoItem.parentNode.children).indexOf(todoItem);
+        todoItemsArray[index].done = input_checkbox.checked;
         if (input_checkbox.checked) {
             input_checkbox.setAttribute('checked', '');
         } else {
             input_checkbox.removeAttribute('checked');
         }
-        settodoItemsArrayToLS();                
+        setTodoItemsArrayToLs();                
     })
 }
 
@@ -181,17 +169,14 @@ function addtodoItem(content){
         Content:content,
         done: false
     }
-    todoItemsArray.push(todoItem)
-    settodoItemsArrayToLS();
+    todoItemsArray.push(todoItem);
+    setTodoItemsArrayToLs();
 }
 
 function addYourTodoTotodoList(addtodoInputVal){
-        let newTodo = {
+        const newTodo = {
             Content: addtodoInputVal,
             done: false,
         };
         createDOM(newTodo);
-        let todoItem = document.getElementById(`${newTodo.Content}`)
-        let input_checkbox = todoItem.querySelector(`#${CSS.escape(addtodoInputVal)} span.input-group-text input.form-check-input`);
-        input_checkbox.checked = newTodo.done;
 }
