@@ -39,7 +39,7 @@ addTodoBtn.addEventListener('click', () => {
 });
 //enter
 document.addEventListener('keydown',(event)=>{
-    if(event.key === 'Enter' || event.keyCode === 13){
+    if(event.key === 'Enter'){
         let addtodoInputVal=addtodoInput.value.trim();
         if (addtodoInputVal !== '') {
             addtodoItem(addtodoInputVal);
@@ -94,10 +94,8 @@ function createDOM (item){
         div_todoGroup.append(span_inputGroupText,input_displayTodo,div_modifyAndDelete);
         div_todoItem.append(div_todoGroup);
         todoListEl.append(div_todoItem);
-        //一個代辦事項的DOM生成完後，替此代辦事項的按鈕及checkbox註冊事件
         addEventListeners(item);
 }
-
 //初始的渲染畫面
 function renderingTodoList(){
     todoItemsArray.forEach((item,index)=>{
@@ -115,19 +113,16 @@ function addEventListeners(item){
     let input_checkbox = todoItem.querySelector('span.input-group-text input.form-check-input');
 
     modifyBtn.addEventListener('click', (event) => {
-        // 編輯按鈕邏輯
         let input_displayTodo = todoItem.querySelector('.displayInput');
         let isDisabled = input_displayTodo.disabled;
 
         if (isDisabled) {
-            // 啟用編輯模式
             input_displayTodo.removeAttribute('disabled');
             modifyBtn.classList.remove('btn-warning');
             modifyBtn.classList.add('btn-success');
             modifyBtn.textContent = '保存';
             deleteBtn.disabled = true;
         } else if (!isDisabled) {
-            // 保存編輯內容
             //找到所點擊的那個todoItem，在todoList中的索引位置
             let index = Array.from(todoItem.parentNode.children).indexOf(todoItem);
             //透過找到的索引，去更新Content的內容
