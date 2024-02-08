@@ -28,6 +28,8 @@ html,body {
 
 .nav-host-logo-section img {
     height: 50px;
+    /* outline: 1px solid black; */
+    margin: 10px 140px 0 10%;
 }
 
 .profile-section {
