@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主辦中心</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./grid.css">
+    <link rel="stylesheet" href="./profile-container.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            /* outline: 2px solid black; */
+            box-sizing: border-box;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+        }
+
+        .hostCenter-container {
+            position: relative;
+            height: 100%;
+            display: grid;
+        }
+
+        .host-header {
+            /* position: fixed; */
+            grid-area: header;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            /* background: linear-gradient(to top, #B5D7FF, #8CAEF7); */
+            background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+            box-shadow: 0 3px 10px #b8b8b8;
+            
+        }
+
+        .profile-section {
+            position: relative;
+            display: flex;
+        }
+        .profile-section .profile-photo {
+            /* border: 1px solid black; */
+            height: 44px;
+            width: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 100%;
+            margin-right: 10px;
+            margin-top:4px ;
+        }
+
+
+        /* 大頭貼 */
+        .profile-section .profile-photo img {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .profile-section .profile-photo img:hover {
+            transform: scale(1.2);
+        }
+
+        .profile-section .create-activity-btn {
+            border-radius: 25px;
+            padding: 0 15px;
+            margin: 8px 20px 8px 0;
+            letter-spacing: 2px;
+            color: #fff;
+            background-color: #2764b9;
+            border: none;
+            cursor: pointer;
+        }
+        .create-activity-btn:hover {
+            background-color: #3b74c5;
+        }
+
+        .content {
+            grid-area: detailPage;
+            overflow-x: hidden  ;
+            /* background-color: #6969693b; */
+        }
+
+        .side-menu {
+            grid-area: sideMenu;
+            /* background-color: blue; */
+        }
+        .content .page {
+            width: 90%;
+            height: 200px;
+            border-radius: 20px;
+            border: 2px solid rgb(199, 194, 194);
+            /* background-color: #ddd9d9; */
+            margin: 10px auto; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #menu-switch {
+            display: none;
+        }
+
+
+        .menu-container ul li {
+            width: 100%;
+            margin-top: 20px;
+            
+        }
+
+
+        .sub-menu {
+            display: none;
+        }
+
+        .aside-menu {
+            width: 224px;
+            margin-top: 10px;
+            border-top: 1px solid #fff;
+            /* outline: 1px solid #000; */
+            display: flex;
+            flex-direction: column;
+            /* align-content: space-between; */
+ 
+        }
+        .aside-menu li {
+            /* outline: 1px solid #000; */
+            padding-bottom: 10px;
+            /* border-bottom:1px solid #d3e2f8; */
+        }
+        .aside-menu .menu-item .icon-arrow {
+            /* width: 16px; */
+            position: relative;
+            right: -100px;
+        }
+        .menu-input-item {
+            display: none;
+        }
+
+        .menu-item ul {
+            /* display: none; */
+        }
+
+
+        .sub-menu {
+            /* display: none; */
+        }
+
+        .sub-menu.hidden {
+            display: none !important;
+        }
+
+        .fa-solid {
+            /* position: absolute;
+            right: 20px;
+            color: #fff; */
+            margin-right: 10px;
+        }
+
+        .fa-chevron-down {
+            color: #fff;
+            padding-left: 70px ;
+            font-weight: 700;
+        }
+
+        /* 子選單樣式設定 */
+        .sub-menu {
+                    position: relative;
+            /* width: 100%; */
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+
+            /* outline: 1px solid #000; */
+            /* background-color: #000; */
+            
+        }
+        .sub-menu  li {
+            width: 100%;
+            padding-left: 42px;
+        }
+        .sub-menu  li a{
+            /* padding-left: 16px; */
+            width: 100%;
+            /* outline: 1px solid #000; */
+        }
+        
+
+        /* 手機 */
+        @media screen and (max-width:1023px) {
+            .hostCenter-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 52px 1fr;
+                grid-template-areas: 
+                    "header"
+                    "detailPage";
+            }
+            /* 漢堡選單樣式 */
+            .hb {
+                width: 44px;
+                height: 44px;
+                margin-top: 4px;
+                display: flex;
+                color: #fff;
+                /* background-color: #aaa; */
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                order: -1;
+                padding:0 0 0 10px;
+            }
+            .hb span {
+                width: 60%;
+                height: 3px;
+                margin: 3px;
+                background-color: #fff;
+                border-radius: 3px;
+            }
+
+            nav.nav-container {
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+            box-shadow:  0 3px 15px #595959;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* opacity: 0.3; */
+            left: -100%;
+            transition: .3s;
+        }
+
+        #side-menu-close {
+            display: none;
+        }
+
+        .nav-host-logo-section {
+            display: flex;
+            /* outline: 2px solid black; */
+            margin-top:5px ;
+        }
+
+        .nav-host-logo-section img {
+            height: 50px;
+            /* outline: 1px solid black; */
+            margin: 10px 140px 0 10%;
+        }
+        .cross {
+            position: relative;
+            /* outline: 1px solid black; */
+            width: 30px;
+            height: 30px;
+            display: flex;
+            color: #fff;
+            /* background-color: #aaa; */
+            flex-direction: column;
+            /* justify-content: center; */
+            cursor: pointer;
+        }
+
+
+
+        .cross span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 70px;
+            position: absolute;
+            inset: 0; 
+            margin: 14px 3px;
+        }
+        .cross span:first-child{
+            rotate: 45deg;
+        }
+        .cross span:nth-child(2){
+            rotate: -45deg;
+        }
+
+        .menu-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            box-sizing: border-box;
+            /* outline: 2px solid red; */
+            
+
+        }
+        .menu-container ul.aside-menu {
+            width: 100%;
+            padding: 50px 0;
+            /* outline: 2px solid red; */
+
+        }
+        .menu-container ul li {
+            position: relative;
+            /* outline: 1px solid black; */
+        }
+
+
+        .menu-container ul li a {
+            /* outline: 2px solid red; */
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 0 0 0 50px;
+        }
+        .fa-chevron-down {
+            padding-left: 120px;
+        }
+        .menu-container .create-activity-btn {
+            margin: 20px;
+            border-radius: 25px;
+            padding:10px 0 ;
+            background-color: #2764b9;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+
+        .create-activity-btn:hover {
+            background-color: #3b74c5;
+        }
+
+            #menu-switch:checked ~ .hostCenter-container .nav-container {
+                opacity: 1;
+                left: 0;
+            }
+            #menu-switch:checked ~ .hostCenter-container .content{
+                transition: .3s;
+                background-color: #6665657e;
+            }
+            
+            .host-header .host-logo {
+                box-sizing: border-box;
+                /* margin: 5px; */
+            }
+
+            .profile-section .create-activity-btn {
+                display: none;
+            }
+
+            nav.side-menu {
+                display: none;
+            }
+
+            
+        }
+        
+
+        @media screen and (min-width:1024px) {
+            .host-header .host-logo{
+                display: none;
+            }
+            .nav-container {
+                display: none;
+            }
+
+            .hostCenter-container {
+                grid-template-columns: 224px auto;
+                grid-template-rows: 52px 1fr;
+                grid-template-areas: 
+                    "sideMenu header"
+                    "sideMenu detailPage";
+            }
+
+            nav.side-menu {
+                width: 224px;
+                height: 100%;
+                background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+                box-shadow: 3px 0 15px #b8b8b8;
+                display: flex;
+                flex-direction: column;
+                left: -100%;
+            }
+            .nav-host-logo-section img {
+                height: 50px;
+                /* outline: 1px solid; */
+                margin: 10px 15% 0 10%;
+            }
+
+            nav.side-menu .menu-container {
+                display: flex;
+                flex-direction: column;
+                /* justify-content: space-between; */
+                align-items: center;
+                flex-grow: 1;
+                box-sizing: border-box;
+                /* padding: 10px 0 0 20px; */
+                /* outline: 2px solid red; */
+            }
+
+            .menu-container ul.aside-menu {
+
+        }
+
+        .menu-container ul li {
+            margin-top: 20px;
+            /* height: 100px; */
+            position: relative;
+        }
+
+        .menu-container ul li a {
+            display: inline-block;
+            width: 100%;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            padding-left: 20px;
+        }
+
+                /* 子選單樣式設定 */
+                .sub-menu {
+                    position: relative;
+            /* width: 100%; */
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+
+            /* outline: 1px solid #000; */
+            /* background-color: #000; */
+            
+        }
+        .sub-menu  li {
+            width: 100%;
+            padding-left: 42px;
+        }
+        .sub-menu  li a{
+            /* padding-left: 16px; */
+            width: 100%;
+            /* outline: 1px solid #000; */
+        }
+
+        .menu-input-item:checked ~.sub-menu {
+                /* display: block; */
+        }
+        
+        .aside-menu li:checked>ul{
+            /* display: block; */
+
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-switch">
+ 
+
+    <div class="hostCenter-container">
+        
+        <div class="host-header">
+            
+            <label for="menu-switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav class="nav-container">
+            
+                <div class="nav-host-logo-section">
+                    <img src="./logos and search/host-logo.png" alt="">
+                    
+                    <label for="menu-switch" class="cross">
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <!-- <div class="line"></div> -->
+                </div>
+
+                <div class="menu-container">
+                    <ul class="aside-menu">
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-days"></i>活動列表</a></li>
+                        <li class="menu-item">
+                            <a href="#">
+                            <i class="fa-solid fa-sack-dollar"></i>加值管理<i class="fa-solid fa-chevron-down"></i></a>
+                            
+                        </li>
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-chart-line"></i>數據中心</a></li>
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-circle-info"></i>服務介紹</a></li>
+                    </ul>
+                    <button class="create-activity-btn">辦活動</button> 
+                </div>         
+            </nav>
+
+            <img class="host-logo" src="./logos and search/host-logo.png" alt="主辦中心logo">
+
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="logos and search//profile-photo.png" alt="大頭照">  
+                </div>
+                <button class="create-activity-btn">辦活動</button>  
+            </div>
+        </div>
+
+        <nav class="side-menu">
+            <div class="nav-host-logo-section">
+                <img src="./logos and search/host-logo.png" alt="">
+                <!-- <div class="line"></div> -->
+            </div>
+            <div class="menu-container">
+                <ul class="aside-menu">
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-calendar-days"></i>活動列表</a></li>
+                        <li class="menu-item">
+                            <a href="#">
+                            <i class="fa-solid fa-sack-dollar"></i>加值管理                            <i class="fa-solid fa-chevron-down"></i></a>
+
+
+                        </li>
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-chart-line"></i>數據中心</a></li>
+                        <li class="menu-item"><a href="#"><i class="fa-solid fa-circle-info"></i>服務介紹</a></li>
+                </ul>
+                
+            </div>         
+        </nav>
+       
+        <div class="content" >
+            <div class="page"><p>content</p></div>
+            <div class="page"><p>content</p></div>
+            <div class="page"><p>content</p></div>
+            <div class="page"><p>content</p></div>
+            <div class="page"><p>content</p></div>
+        </div>
+    </div>
+
+    <script>
+        // 定義子選單的模板
+            const profileTemplate = `<div class="profile-container">
+        <div class="profile-info">
+            <div class="photo">
+                <img src="./logos and search/profile-photo.png" alt="">
+            </div>
+            <div class="detail">
+                <div class="bage">尚未認證</div>
+                <div class="username">
+                    <span>Username</span>
+                    <a href="">升級</a>
+                </div>
+            </div>
+        </div>
+        <div class="editor">
+            <button class="browse">瀏覽主辦小站</button>
+            <button class="edit">編輯主辦小站</button>
+            <button class="edit-info">編輯認證資訊</button>
+        </div>
+        <div class="host-change">
+            <button>切換主辦單位</button>
+        </div>
+        <div class="logout">
+            <p>xxxx@gmail.com</p>
+            <a href="">登出</a>
+        </div>
+    </div>`
+
+    // 获取<img>元素
+const userImage = document.querySelector('.profile-section .profile-photo img');
+
+// 获取content容器
+const contentContainer = document.querySelector('.content');
+// 获取.profile-section .profile-photo img元素
+const profileSection = document.querySelector('.profile-section');
+
+    // 定义一个变量，用于跟踪profile是否已经添加
+let profileAdded = false;
+
+// 添加点击事件监听器
+userImage.addEventListener('click', () => {
+    if (profileAdded) {
+        // 如果profile已添加，从content容器中移除
+        profileSection.removeChild(profileSection.lastChild);
+        profileAdded = false;
+    } else {
+        // 如果profile未添加，将profileTemplate添加到content容器
+        const profileContainer = document.createElement('div');
+        profileContainer.innerHTML = profileTemplate;
+
+        profileSection.appendChild(profileContainer);
+        profileAdded = true;
+    }
+});
+
+
+document.addEventListener('click', (event) => {
+    // 检查点击事件的目标是否在 .profile-section 之外
+    if (!profileSection.contains(event.target) && profileAdded) {
+        // 如果profile已添加，从content容器中移除
+        profileSection.removeChild(profileSection.lastChild);
+        profileAdded = false;
+    }
+});
+
+
+    const subMenuTemplate=`<input type="checkbox" class="menu-input-item" id="menu-item2">
+                        <label for="menu-item2" class="icon-arrow"></label>
+                        <ul class="sub-menu">
+                            <li><a href="">摘星計畫</a></li>
+                            <li><a href="">購買EP</a></li>
+                            <li><a href="">EP購買記錄</a></li>
+                        </ul>`
+
+// 获取 nav.side-menu .menu-container ul.aside-menu 中的第二个 li.menu-item
+const sideMenuSecondMenuItem = document.querySelector('nav.side-menu .menu-container ul.aside-menu li.menu-item:nth-child(2)');
+
+// 获取 nav.nav-container ul.aside-menu 中的第二个 li.menu-item
+const navContainerSecondMenuItem = document.querySelector('nav.nav-container ul.aside-menu li.menu-item:nth-child(2)');
+
+// 定义变量，用于跟踪子菜单是否已经添加
+let sideMenuSubMenuAdded = false;
+let navContainerSubMenuAdded = false;
+
+// 添加点击事件监听器到 nav.side-menu 中的第二个 menu-item
+sideMenuSecondMenuItem.addEventListener('click', (event) => {
+    event.stopPropagation(); // 阻止事件冒泡
+
+    if (!sideMenuSubMenuAdded) {
+        // 如果子菜单未添加，在第二个 side-menu menu-item 中的 a 元素后插入 subMenuTemplate
+        sideMenuSecondMenuItem.querySelector('a').insertAdjacentHTML('afterend', subMenuTemplate);
+        sideMenuSubMenuAdded = true;
+    } else {
+        // 如果子菜单已添加，从第二个 side-menu menu-item 中移除
+        const subMenuContainer = sideMenuSecondMenuItem.querySelector('.sub-menu');
+        subMenuContainer.parentNode.removeChild(subMenuContainer);
+        sideMenuSubMenuAdded = false;
+    }
+});
+
+// 添加点击事件监听器到 nav.nav-container 中的第二个 menu-item
+navContainerSecondMenuItem.addEventListener('click', (event) => {
+    event.stopPropagation(); // 阻止事件冒泡
+
+    if (!navContainerSubMenuAdded) {
+        // 如果子菜单未添加，在第二个 nav-container menu-item 中的 a 元素后插入 subMenuTemplate
+        navContainerSecondMenuItem.querySelector('a').insertAdjacentHTML('afterend', subMenuTemplate);
+        navContainerSubMenuAdded = true;
+    } else {
+        // 如果子菜单已添加，从第二个 nav-container menu-item 中移除
+        const subMenuContainer = navContainerSecondMenuItem.querySelector('.sub-menu');
+        subMenuContainer.parentNode.removeChild(subMenuContainer);
+        navContainerSubMenuAdded = false;
+    }
+});
+
+// 添加点击事件监听器到文档，以便在点击其他地方时隐藏子菜单
+document.addEventListener('click', () => {
+    if (sideMenuSubMenuAdded) {
+        // 如果子菜单已添加，从第二个 side-menu menu-item 中移除
+        const subMenuContainer = sideMenuSecondMenuItem.querySelector('.sub-menu');
+        subMenuContainer.parentNode.removeChild(subMenuContainer);
+        sideMenuSubMenuAdded = false;
+    }
+
+    if (navContainerSubMenuAdded) {
+        // 如果子菜单已添加，从第二个 nav-container menu-item 中移除
+        const subMenuContainer = navContainerSecondMenuItem.querySelector('.sub-menu');
+        subMenuContainer.parentNode.removeChild(subMenuContainer);
+        navContainerSubMenuAdded = false;
+    }
+});
+        
+
+    </script>
+</body>
+</html>
