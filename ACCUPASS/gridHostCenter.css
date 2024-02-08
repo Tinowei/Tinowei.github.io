@@ -1,0 +1,448 @@
+* {
+    /* outline: 2px solid black; */
+    box-sizing: border-box;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.hostCenter-container {
+    position: relative;
+    height: 100%;
+    display: grid;
+}
+
+.host-header {
+    /* position: fixed; */
+    grid-area: header;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* background: linear-gradient(to top, #B5D7FF, #8CAEF7); */
+    background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+    box-shadow: 0 3px 10px #b8b8b8;
+    
+}
+
+.profile-section {
+    position: relative;
+    display: flex;
+}
+.profile-section .profile-photo {
+    /* border: 1px solid black; */
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 100%;
+    margin-right: 10px;
+    margin-top:4px ;
+}
+
+
+/* 大頭貼 */
+.profile-section .profile-photo img {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    transition: .3s;
+}
+.profile-section .profile-photo img:hover {
+    transform: scale(1.2);
+}
+
+.profile-section .create-activity-btn {
+    border-radius: 25px;
+    padding: 0 15px;
+    margin: 8px 20px 8px 0;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #2764b9;
+    border: none;
+    cursor: pointer;
+}
+.create-activity-btn:hover {
+    background-color: #3b74c5;
+}
+
+.content {
+    grid-area: detailPage;
+    overflow-x: hidden  ;
+    /* background-color: #6969693b; */
+}
+
+.side-menu {
+    grid-area: sideMenu;
+    /* background-color: blue; */
+}
+.content .page {
+    width: 90%;
+    height: 200px;
+    border-radius: 20px;
+    border: 2px solid rgb(199, 194, 194);
+    /* background-color: #ddd9d9; */
+    margin: 10px auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#menu-switch {
+    display: none;
+}
+
+
+.menu-container ul li {
+    width: 100%;
+    margin-top: 20px;
+    
+}
+
+
+.sub-menu {
+    display: none;
+}
+
+.aside-menu {
+    width: 224px;
+    margin-top: 10px;
+    border-top: 1px solid #fff;
+    /* outline: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    /* align-content: space-between; */
+
+}
+.aside-menu li {
+    /* outline: 1px solid #000; */
+    padding-bottom: 10px;
+    /* border-bottom:1px solid #d3e2f8; */
+}
+.aside-menu .menu-item .icon-arrow {
+    /* width: 16px; */
+    position: relative;
+    right: -100px;
+}
+.menu-input-item {
+    display: none;
+}
+
+.menu-item ul {
+    /* display: none; */
+}
+
+
+.sub-menu {
+    /* display: none; */
+}
+
+.sub-menu.hidden {
+    display: none !important;
+}
+
+.fa-solid {
+    /* position: absolute;
+    right: 20px;
+    color: #fff; */
+    margin-right: 10px;
+}
+
+.fa-chevron-down {
+    color: #fff;
+    padding-left: 70px ;
+    font-weight: 700;
+}
+
+/* 子選單樣式設定 */
+.sub-menu {
+            position: relative;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    /* outline: 1px solid #000; */
+    /* background-color: #000; */
+    
+}
+.sub-menu  li {
+    width: 100%;
+    padding-left: 42px;
+}
+.sub-menu  li a{
+    /* padding-left: 16px; */
+    width: 100%;
+    /* outline: 1px solid #000; */
+}
+
+
+/* 手機 */
+@media screen and (max-width:1023px) {
+    .hostCenter-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 52px 1fr;
+        grid-template-areas: 
+            "header"
+            "detailPage";
+    }
+    /* 漢堡選單樣式 */
+    .hb {
+        width: 44px;
+        height: 44px;
+        margin-top: 4px;
+        display: flex;
+        color: #fff;
+        /* background-color: #aaa; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        order: -1;
+        padding:0 0 0 10px;
+    }
+    .hb span {
+        width: 60%;
+        height: 3px;
+        margin: 3px;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+
+    nav.nav-container {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+    box-shadow:  0 3px 15px #595959;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* opacity: 0.3; */
+    left: -100%;
+    transition: .3s;
+}
+
+#side-menu-close {
+    display: none;
+}
+
+.nav-host-logo-section {
+    display: flex;
+    /* outline: 2px solid black; */
+    margin-top:5px ;
+}
+
+.nav-host-logo-section img {
+    height: 50px;
+    /* outline: 1px solid black; */
+    margin: 10px 140px 0 10%;
+}
+.cross {
+    position: relative;
+    /* outline: 1px solid black; */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    color: #fff;
+    /* background-color: #aaa; */
+    flex-direction: column;
+    /* justify-content: center; */
+    cursor: pointer;
+}
+
+
+
+.cross span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 70px;
+    position: absolute;
+    inset: 0; 
+    margin: 14px 3px;
+}
+.cross span:first-child{
+    rotate: 45deg;
+}
+.cross span:nth-child(2){
+    rotate: -45deg;
+}
+
+.menu-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    box-sizing: border-box;
+    /* outline: 2px solid red; */
+    
+
+}
+.menu-container ul.aside-menu {
+    width: 100%;
+    padding: 50px 0;
+    /* outline: 2px solid red; */
+
+}
+.menu-container ul li {
+    position: relative;
+    /* outline: 1px solid black; */
+}
+
+
+.menu-container ul li a {
+    /* outline: 2px solid red; */
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 0 0 50px;
+}
+.fa-chevron-down {
+    padding-left: 120px;
+}
+.menu-container .create-activity-btn {
+    margin: 20px;
+    border-radius: 25px;
+    padding:10px 0 ;
+    background-color: #2764b9;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.create-activity-btn:hover {
+    background-color: #3b74c5;
+}
+
+    #menu-switch:checked ~ .hostCenter-container .nav-container {
+        opacity: 1;
+        left: 0;
+    }
+    #menu-switch:checked ~ .hostCenter-container .content{
+        transition: .3s;
+        background-color: #6665657e;
+    }
+    
+    .host-header .host-logo {
+        box-sizing: border-box;
+        /* margin: 5px; */
+    }
+
+    .profile-section .create-activity-btn {
+        display: none;
+    }
+
+    nav.side-menu {
+        display: none;
+    }
+
+    
+}
+
+
+@media screen and (min-width:1024px) {
+    .host-header .host-logo{
+        display: none;
+    }
+    .nav-container {
+        display: none;
+    }
+
+    .hostCenter-container {
+        grid-template-columns: 224px auto;
+        grid-template-rows: 52px 1fr;
+        grid-template-areas: 
+            "sideMenu header"
+            "sideMenu detailPage";
+    }
+
+    nav.side-menu {
+        width: 224px;
+        height: 100%;
+        background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+        box-shadow: 3px 0 15px #b8b8b8;
+        display: flex;
+        flex-direction: column;
+        left: -100%;
+    }
+    .nav-host-logo-section img {
+        height: 50px;
+        /* outline: 1px solid; */
+        margin: 10px 15% 0 10%;
+    }
+
+    nav.side-menu .menu-container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        align-items: center;
+        flex-grow: 1;
+        box-sizing: border-box;
+        /* padding: 10px 0 0 20px; */
+        /* outline: 2px solid red; */
+    }
+
+    .menu-container ul.aside-menu {
+
+}
+
+.menu-container ul li {
+    margin-top: 20px;
+    /* height: 100px; */
+    position: relative;
+}
+
+.menu-container ul li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    padding-left: 20px;
+}
+
+        /* 子選單樣式設定 */
+        .sub-menu {
+            position: relative;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    /* outline: 1px solid #000; */
+    /* background-color: #000; */
+    
+}
+.sub-menu  li {
+    width: 100%;
+    padding-left: 42px;
+}
+.sub-menu  li a{
+    /* padding-left: 16px; */
+    width: 100%;
+    /* outline: 1px solid #000; */
+}
+
+.menu-input-item:checked ~.sub-menu {
+        /* display: block; */
+}
+
+.aside-menu li:checked>ul{
+    /* display: block; */
+
+}
+
+}
