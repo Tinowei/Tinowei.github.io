@@ -26,6 +26,10 @@ html,body {
     
 }
 
+.nav-host-logo-section img {
+    height: 50px;
+}
+
 .profile-section {
     position: relative;
     display: flex;
