@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="CreateActivityStep04.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header class="header ">
+        <div class="container">
+            <p class="step">步驟一：活動資訊
+                <span>(活動主題)</span>
+            </p>
+            
+            <a href="">
+                <i class="fa-solid fa-circle-left"></i>
+                <span>返回首頁</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="container content-container">
+                <div class="activity-theme">
+                    <h2 class="title">選擇活動主題 
+                        <span>(最多選擇兩個)</span>
+                        <span><i class="fa-solid fa-circle-info"></i></span>
+                    </h2>
+                    <div class="choose-theme-page">
+                        <div class="theme-card">
+                            <img class="" src="../svgs/new_arts.svg" alt="">
+                            <p class="theme-name">藝文</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_blockchain.svg" alt="">
+                            <p class="theme-name">區塊鏈</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_business.svg" alt="">
+                            <p class="theme-name">商業</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_charitable.svg" alt="">
+                            <p class="theme-name">公益</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_design.svg" alt="">
+                            <p class="theme-name">設計</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_entertainment.svg" alt="">
+                            <p class="theme-name">娛樂</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_family.svg" alt="">
+                            <p class="theme-name">親子</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_fashion.svg" alt="">
+                            <p class="theme-name">時尚</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_film.svg" alt="">
+                            <p class="theme-name">電影</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_food.svg" alt="">
+                            <p class="theme-name">美食</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_game.svg" alt="">
+                            <p class="theme-name">遊戲</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_handmade.svg" alt="">
+                            <p class="theme-name">手作</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_health.svg" alt="">
+                            <p class="theme-name">健康</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_investment.svg" alt="">
+                            <p class="theme-name">投資</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_learning.svg" alt="">
+                            <p class="theme-name">學習</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_music.svg" alt="">
+                            <p class="theme-name">音樂</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_pet.svg" alt="">
+                            <p class="theme-name">寵物</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_photography.svg" alt="">
+                            <p class="theme-name">攝影</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_sports.svg" alt="">
+                            <p class="theme-name">運動</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_startup.svg" alt="">
+                            <p class="theme-name">創業</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_technology.svg" alt="">
+                            <p class="theme-name">科技</p>
+                        </div>
+                        <div class="theme-card">
+                            <img src="../svgs/new_travel.svg" alt="">
+                            <p class="theme-name">戶外體驗</p>
+                        </div>
+    
+    
+    
+                    </div>
+                </div>
+                <div class="br-line"></div>
+                <div class="btn-container">
+                    <button class="prev-btn">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        返回主辦中心</button>
+                    <button class="next-btn"> 下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <p class="companyName">eJoin Inc</p>
+            <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        const themeCards = document.querySelectorAll('.theme-card');//全部的卡片
+
+        let selectedThemes = [];
+
+        themeCards.forEach(themeCard=>{
+            themeCard.addEventListener('click',()=>{
+                const isSelected = themeCard.classList.contains('selected');
+
+                if(isSelected) {
+                    themeCard.classList.remove('selected');
+                    selectedThemes = selectedThemes.filter(theme => theme !==themeCard);
+                }
+                else {
+                    if(selectedThemes.length <2){
+                        themeCard.classList.add('selected');
+                         // 將選中主題加入已選中主題陣列
+                        selectedThemes.push(themeCard);
+                    }
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

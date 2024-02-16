@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="CreateActivityStep05.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header ">
+        <div class="container">
+            <p class="step">步驟一：活動資訊
+                <span>(活動類別)</span>
+            </p>
+            
+            <a href="">
+                <i class="fa-solid fa-circle-left"></i>
+                <span>返回首頁</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="container content-container">
+                <div class="activity-type">
+                    <h2 class="title">活動類型</h2>
+                    <div class="choose-activityType-btns">
+                        <button class="activityType">課程</button>
+                        <button class="activityType">展覽</button>
+                        <button class="activityType">派對</button>
+                        <button class="activityType">聚會</button>
+                        <button class="activityType">市集</button>
+                        <button class="activityType">比賽</button>
+                        <button class="activityType">表演</button>
+                        <button class="activityType">研討會</button>
+                        <button class="activityType">分享會</button>
+                        <button class="activityType">見面會</button>
+                        <button class="activityType">宣傳活動</button>
+                        <button class="activityType">導覽</button>
+                        <button class="activityType">體驗</button>
+                    </div>
+                </div>
+                <div class="br-line"></div>
+                <div class="btn-container">
+                    <button class="prev-btn">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        返回主辦中心</button>
+                    <button class="next-btn"> 下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <p class="companyName">eJoin Inc</p>
+            <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        const chooseActivityTypeBtns =document.querySelectorAll('.choose-activityType-btns button');
+
+        let selectedBtn = null;
+
+        chooseActivityTypeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isAlreadySelected = selectedBtn !== null;
+
+                if (isAlreadySelected) {
+                    selectedBtn.classList.remove('selected');
+                }
+
+                if (selectedBtn !== btn) {
+                    btn.classList.add('selected');
+                    selectedBtn = btn;
+                } else {
+                    selectedBtn = null;
+                }
+            });
+        });
+
+
+    </script>
+</body>
+</html>

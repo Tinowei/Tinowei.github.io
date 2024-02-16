@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <!-- <link rel="stylesheet" href="header_footer.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@200&display=swap");
+*{
+    /* color: #; */
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #eaeaea;
+}
+header {
+    background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+    position: sticky;
+    box-shadow: 0 3px 10px #b8b8b8;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+header .container {
+    /* outline: 1px solid black; */
+    display: flex;
+    align-items: center;
+    width: 58%;
+    justify-content: space-between;
+    height: 52px;
+    font-size: 18px;
+    color: #fff;
+}
+.step {
+    font-weight: 500;
+}
+.step span{
+    color: #faf5f5;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+header .container a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: .3s;
+}
+header .container a:hover {
+    color:#e6e5e5;
+}
+
+.content {
+    width: 100%;
+    margin: 40px auto;
+    flex-grow: 1;
+}
+
+.footer .footer-container {
+    background-color: #545353;
+    color: #9f9b9b;
+    
+}
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.footer-container p {
+    padding-right:10px ;
+}
+
+.footer-container .top {
+    width: 58%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #747474;
+    /* outline: 2px solid red; */
+}
+.footer-container .top .createActivity,
+.footer-container .top .joinActivity,
+.footer-container .top .aboutMe,
+.footer-container .top .customerService {
+    width: 100%;
+}
+.footer-container .top p {
+    color: #9f9b9b;
+}
+
+.footer-container .top p.title {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.footer-container .top ul{
+    /* padding: 10px 0; */
+}
+.footer-container .top ul li {
+    padding: 5px 10px ;
+}
+
+.footer-container .top a {
+    text-decoration: none;
+    color: #d2d0d0;
+    font-size: 14px;
+}
+.footer-container .top .customerService {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-container .top .customerService p.email,
+.footer-container .top .customerService p.days {
+    color: #d2d0d0;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.footer-container .top .customerService a {
+    /* border: 2px solid #fff; */
+    background-color: #2764b9;
+    color: #fff;
+    padding:  10px 20px;
+    margin-top: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+.footer-container .middle {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px 0;
+    /* outline:  1px solid red; */
+   
+}
+
+.footer-container .middle .socialMedia {
+    /* outline:  1px solid rgb(248, 238, 238); */
+    margin: 10px;
+    width: 58%;
+    border-bottom: 1px solid #747474;
+    text-align: center;
+    
+} 
+.footer-container .middle .socialMedia p.news {
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+}
+.footer-container .middle .socialMedia a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #d2d0d0;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff;
+    color: #545353;
+    margin: 10px;
+}
+.footer-container .middle .socialMedia a i {
+    font-size: 30px;
+    
+}
+.footer-container .middle .socialMedia a i.fa-facebook {
+    color: #2764b9; 
+}
+.footer-container .middle .socialMedia a i.fa-instagram {
+    color: #b70865;
+}
+
+.footer-container .bottom {
+    /* padding-top: 20px; */
+    line-height: 14px;
+}
+
+.footer-container .bottom p {
+    display: inline;
+}
+
+
+        .header .leftSide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .header .leftSide .userphoto {
+            cursor: pointer;
+            border-radius: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #aaa;
+            width: 25px;
+            height: 25px;
+            /* outline: 1px solid blue; */
+            margin: 0 10px;
+            overflow: hidden;
+            
+        }
+
+        .header .leftSide .userphoto img {
+            width: 50px;
+            height: 50px;
+            transition: .3s;
+        }
+        .header .leftSide .userphoto img:hover {
+            transform: scale(1.2);
+        }
+
+        button.createBtn {
+            width: 80px;
+            cursor: pointer;
+            border: none;
+            color: #fff;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: #2764b9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            box-sizing: border-box;
+        }
+
+        header.header .container a img.logo {
+            height: 40px;
+        }
+
+
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+            margin: 10px;
+        }
+        .searchButton:hover {
+            background-color: #3a67ae;
+        }
+
+
+        .searchTerm {
+            width: 100px;
+            border: 3px solid #4d86e1;
+            border-right: none;
+            padding: 5px;
+            height: 15px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+        }
+
+        .searchTerm:focus{
+            color: #4d86e1;
+        }
+
+        .searchButton {
+            width: 40px;
+            height: 31px;
+            border: 1px solid #4d86e1;
+            background: #4d86e1;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+
+        /* header and footer */
+        @media screen and (max-width: 767px) {
+            header .container a {
+                display: none;
+            }
+            header .container {
+                justify-content: center;
+            }
+
+            .content .wrap .container {
+
+            }
+            .footer-container .bottom p {
+                display: block;
+                padding: 10px;
+                text-align: center;
+            }
+            .footer-container .bottom span {
+                display: inline-block;
+                text-align: center;
+            }
+            .footer-container {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    padding: 10px;
+            }
+            .footer-container .top {
+                display: block;
+                text-align: center;
+            }
+            .footer-container .top .createActivity,
+            .footer-container .top .joinActivity,
+            .footer-container .top .aboutMe{
+                border-bottom: 1px solid #747474;
+                padding-bottom: 10px;
+            }
+
+
+            .footer-container .top .customerService a {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header ">
+        <div class="container">
+            <!-- <button class="hamburger-btn">
+                <label for="menu-switch"><i class="fa-solid fa-bars"></i></label>
+            </button> -->
+            <a href="#"><img  class="logo" src="../logos and search/host-logo.png" alt="" ></a>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="">
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+               </button>
+             </div>
+            <div class="leftSide">
+                <div class="userphoto">
+                    <img src="../logos and search/profile-photo.png" alt="" style="height: 44px;">
+                </div>
+                <button class="createBtn">辦活動</button>  
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="top">
+                <div class="createActivity">
+                    <p class="title">舉辦活動</p>
+                    <ul>
+                        <li><a href="#">如何開始第一個活動？</a></li>
+                        <li><a href="#">費用方案</a></li>
+                        <li><a href="#">活動好場地</a></li>
+                        <li><a href="#">活動人社群</a></li>
+                        <li><a href="#">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="joinActivity">
+                    <p class="title">參加活動</p>
+                    <ul>
+                        <li><a href="#">活動新鮮事</a></li>
+                    </ul>
+                </div>
+                <div class="aboutMe">
+                    <p class="title">關於我們</p>
+                    <ul>
+                        <li><a href="#">加入我們</a></li>
+                        <li><a href="#">服務條款</a></li>
+                    </ul>
+                </div>
+                <div class="customerService">
+                    <p class="title">eJoin客服中心</p>
+                    <p class="email">service@xxxx.com</p>
+                    <p class="days">週一至週五 10:00-18:30</p>
+                    <a href="#" class="helpBtn">
+                        客服小幫手
+                    </a>
+                </div>
+            </div>
+
+            <div class="middle">
+                <div class="socialMedia">
+                    <p class="news">最新消息</p>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <p class="companyName">eJoin Inc</p>
+                <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

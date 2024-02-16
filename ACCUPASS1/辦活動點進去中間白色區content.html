@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html,body {
+            /* width: 100%; */
+            /* height: 100%; */
+            background-color: #eaeaea;
+        }
+        
+        .wrap {
+            outline: 2px solid black;
+        }
+        .content-container {
+            width: 58%;
+            background-color: #fff;
+            margin: auto;
+            padding-top:80px ;
+            /* outline: 2px solid black; */
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            /* border-radius: 30px; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .br-line {
+            width: 100%;
+            height: 2px;
+            background-color: #e8e8e8;
+            margin: 20px 0;
+        }
+
+        .btn-container {
+            width: 80%;;
+            /* outline: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 60px 0;
+        }
+        .btn-container button{
+            cursor: pointer;
+            font-weight: 800;
+            border: none;
+        }
+
+        .btn-container .prev-btn {
+            background-color: #fff;
+            color: #6d6d6d;
+        }
+
+        .btn-container .next-btn {
+            padding: 10px 60px;
+            
+            background-color: #8adec3;
+            color: #fff;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="content-container">
+            <div class="activity-type">
+          
+            </div>
+            <div class="br-line"></div>
+            <div class="btn-container">
+                <button class="prev-btn">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                    返回主辦中心</button>
+                <button class="next-btn"> 下一步</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

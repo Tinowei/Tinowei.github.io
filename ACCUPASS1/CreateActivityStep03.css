@@ -1,0 +1,152 @@
+html,body {
+    /* width: 100%; */
+    /* height: 100%; */
+    background-color: #eaeaea;
+}
+
+.wrap {
+    /* outline: 2px solid black; */
+}
+.content-container {
+    /* width: 800px; */
+    width: 58%;
+    background-color: #fff;
+    /* margin: 30px auto; */
+    padding-top:40px ;
+    /* outline: 2px solid black; */
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* border-radius: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.br-line {
+    width: 100%;
+    height: 2px;
+    background-color: #e8e8e8;
+    margin: 20px 0;
+}
+
+.btn-container {
+    width: 80%;;
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 60px 0;
+}
+.btn-container button{
+    cursor: pointer;
+    font-weight: 800;
+    border: none;
+}
+
+.btn-container .prev-btn {
+    background-color: #fff;
+    color: #6d6d6d;
+}
+.btn-container .prev-btn:hover {
+    color:  #b4afaf;
+}
+
+.btn-container .next-btn {
+    padding: 10px 60px;
+    
+    background-color: #8adec3;
+    color: #fff;
+}
+.btn-container .next-btn:hover {
+    background-color: #71c9ad;
+}
+
+
+.activity-type {
+    width: 80%;
+    /* outline:  1px solid red; */
+    padding: 20px;
+}
+.activity-type .title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+.activity-type select {
+    width: 100%;
+    padding: 5px 0 ;
+    background-color: #bebebe;
+    border-color: #c9c6c6;
+    color: #fff;
+    padding: 5px;
+}
+
+.safe-activity-option {
+    /* outline: 2px solid black; */
+    /* margin: 20px; */
+    width: 100%;
+    margin: 20px 0;
+    /* color: #bebebe; */
+}
+
+.safe-activity-option h2 {
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 5px ;
+}
+
+.safe-activity-option span {
+    color: red;
+    padding-left:3px ;
+}
+
+.safe-activity-option p {
+    padding-bottom: 5px ;
+    color: #9c9c9c;
+    line-height: 1.5;
+}
+.safe-activity-option ol {
+    padding-top: 5px;
+    color: #9c9c9c;
+}
+.safe-activity-option ol li{
+    padding-bottom: 5px ;
+    
+}
+
+p.radio-p {
+    margin: 5px 0;
+    color: #323232;
+}
+
+
+/* header and footer */
+@media screen and (max-width: 767px) {
+    header .container a {
+        display: none;
+    }
+    header .container {
+        justify-content: center;
+    }
+
+    .content .wrap .container {
+        flex-wrap: wrap;
+        /* gap: 20px; */
+        justify-content: center;
+    }
+
+    .content .wrap .content-container .btn-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .footer-container p {
+        display: block;
+        text-align: center;
+    }
+    .footer-container {
+        text-align: center;
+        display: block;
+        justify-content: center;
+    }
+}
+

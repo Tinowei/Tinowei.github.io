@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="CreateActivityStep03.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header ">
+        <div class="container">
+            <p class="step">步驟一：活動資訊
+                <span>(選擇主辦單位)</span>
+            </p>
+            <a href="">
+                <i class="fa-solid fa-circle-left"></i>
+                <span>返回首頁</span>
+            </a>
+        </div>
+    </header>
+    <div class="content">
+        <div class="wrap">
+            <div class="container content-container">
+                <div class="activity-type">
+                    <h3 class="title">活動形式</h3>
+                    <select class="" name="" id="">
+                        <option value >請選擇</option>
+                        <option value="offline">線下活動</option>
+                    </select>
+                    <div class="safe-activity-option">
+                    </div>
+                </div>
+                <div class="br-line"></div>
+                <div class="btn-container">
+                    <button class="prev-btn">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        返回主辦中心</button>
+                    <button class="next-btn"> 下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <p class="companyName">eJoin Inc</p>
+            <span> 你揪你股份有限公司 © eJoin Inc. All Rights Reserved.</span>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const safetyLabelTemplate = `<div class="safe-activity-option">
+                        <h2>安心活動標章<span>*</span></h2>
+                        <p>若活動現場提供以下措施，將在活動頁面顯示安心活動標章，讓消費者報名更安心，提升活動報名率！</p>
+                        
+                        <ol>
+                            <li>提供酒精消毒手部、量測體溫和戴口罩，並禁止體溫超過37.5度者入場</li>
+                            <li> 記錄參加者報到狀況，可使用 ACCUPASS 免費驗票 App【 ACCUPASS Partner 】</li>
+                        </ol>
+                        
+                        <p class="radio-p">
+                            <input type="radio" id="符合條件" name="條件選擇" value="符合條件">
+                            <label for="符合條件">本活動符合上述條件（於活動頁面顯示安心活動標章）</label>
+                        </p>
+                        
+                        <p class="radio-p">
+                            <input type="radio" id="不完全符合條件" name="條件選擇" value="不完全符合條件">
+                            <label for="不完全符合條件">不完全符合條件</label>
+        </p>`
+
+        const safeActivityOption =document.querySelector('.safe-activity-option');
+        let activityTypeisSelected =false; 
+
+        const activityType = document.querySelector('.activity-type select ');
+
+        activityType.addEventListener('change', () => {
+            if (activityType.value === 'offline') {
+                safeActivityOption.innerHTML = safetyLabelTemplate;
+            } else {
+                safeActivityOption.innerHTML = ''; // 若未選中線下活動，讓它消失
+            }
+        });
+   </script>
+</body>
+</html>

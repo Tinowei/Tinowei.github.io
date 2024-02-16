@@ -1,0 +1,169 @@
+html,body {
+    width: 100%;
+    /* height: 100%; */
+    background-color: #eaeaea;
+}
+
+.wrap {
+    /* outline: 2px solid black; */
+    width: 100%;
+}
+.content-container {
+    width: 58%;
+    background-color: #fff;
+    /* margin: 30px auto; */
+    padding-top:80px ;
+    /* outline: 2px solid black; */
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* border-radius: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.br-line {
+    width: 100%;
+    height: 2px;
+    background-color: #e8e8e8;
+    margin: 20px 0;
+}
+
+.btn-container {
+    width: 80%;;
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 60px 0;
+}
+.btn-container button{
+    cursor: pointer;
+    font-weight: 800;
+    border: none;
+}
+
+.btn-container .prev-btn {
+    background-color: #fff;
+    color: #6d6d6d;
+}
+.btn-container .prev-btn:hover {
+    color:  #b4afaf;
+}
+
+.btn-container .next-btn {
+    padding: 10px 60px;
+    
+    background-color: #8adec3;
+    color: #fff;
+}
+.btn-container .next-btn:hover {
+    background-color: #71c9ad;
+}
+
+
+
+
+.activity-theme {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activity-theme h2.title {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+.activity-theme h2 span {
+    color: #6d6d6d;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.choose-theme-page {
+    /* outline: 1px solid black; */
+    width: 58%;
+    height: 300px;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+.choose-theme-page .theme-card {
+    width: 80px;
+    position: relative;
+    cursor: pointer;
+    padding: 3px 5px 5px;
+    margin: 10px;
+}
+
+.choose-theme-page .theme-card:hover img{
+    transform: scale(1.1);
+    transition: .3s;
+
+}
+.choose-theme-page .theme-card img {
+    width: 70px;
+    height: 70px;
+}
+
+.choose-theme-page .theme-card p.theme-name {
+    margin-top:5px;
+    color: rgb(19, 79, 129);
+    font-weight: 500;
+}
+
+.selected {
+    position: relative;
+    padding: 10px;
+    border: 2px solid rgb(80, 174, 83);
+    border-radius:5px;
+    width: 70px;
+    height: 100px;
+}
+
+.choose-theme-page .selected:hover{
+    transform: scale(1.1);
+    /* transition: .3s; */
+}
+
+.selected::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 15px;
+    top: -16px;
+    left: 19px;
+    outline: 1px solid rgb(80, 174, 83);
+    background-color: rgb(80, 174, 83);
+    border-radius:2px ;
+}
+.selected::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 12px;
+    border-right: 3px solid #fff;
+    border-bottom:3px solid #fff;
+    rotate: 45deg;
+    top: -18px;
+    left: 36px;
+}
+
+
+@media screen and (max-width: 767px) {
+    .content .wrap .container {
+        flex-wrap: wrap;
+        /* gap: 20px; */
+        justify-content: center;
+    }
+
+    .content .wrap .content-container .btn-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}

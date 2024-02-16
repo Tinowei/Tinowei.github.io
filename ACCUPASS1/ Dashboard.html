@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="CreateActivityStep04.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/profile-container.css">
+    <style>
+        
+        html,body {
+            width: 100%;
+            height: 100%;
+            background-color: #eaeaea;
+        }
+        .Host-Center-Container {
+            display: grid;
+            height: 100%;
+            outline: 1px solid black;
+            overflow-y: hidden;
+        }
+
+        .header {
+            grid-area: header;
+            background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+            box-shadow: 0 3px 10px #b8b8b8;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sideBar {
+            grid-area: sideBar;
+            background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+            box-shadow: 3px 0 15px #160d0d;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            
+            grid-area: content;
+            background-color: #eaeaea;
+            padding: 20px 40px;
+            overflow: scroll;
+            overflow-x: hidden;
+            /* z-index: 0; */
+        }
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+        .wrap {
+            margin-bottom:20px ;
+        }
+        button.hamburger-btn {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color:#fff;
+            /* outline: 1px solid red; */
+            margin: 0 10px;
+        }
+        button.hamburger-btn .fa-bars {
+            font-size: 30px;
+        }
+
+        .header img.logo {
+            height: 50px;
+            margin: 1px 0;
+        }
+        .header .leftSide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .header .leftSide .userphoto {
+            cursor: pointer;
+            border-radius: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #aaa;
+            width: 30px;
+            height: 30px;
+            /* outline: 2px solid blue; */
+            margin: 0 10px;
+            overflow: hidden;
+            
+        }
+
+        .header .leftSide .userphoto img {
+            width: 50px;
+            height: 50px;
+            transition: .3s;
+        }
+        .header .leftSide .userphoto img:hover {
+            transform: scale(1.2);
+        }
+        /* .header .leftSide  */
+        button.createBtn {
+            width: 100px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px;
+            background-color: #2764b9;
+            font-size: 14px;
+            letter-spacing: 2px;
+            box-sizing: border-box;
+        }
+
+        .createBtn:hover {
+            background-color: #2e76da;
+        }
+
+        .sideBar .top {
+            /* outline: 1px solid red; */
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        .sideBar .top a {
+            width: 90%;
+        }
+        .sideBar .top .cross {
+            width: 10%;
+            color: #fff;
+            font-size: 25px;
+        }
+        .sideBar .top .cross i{
+            cursor: pointer;
+        }
+
+
+        .sideBar .middle {
+            width: 100%;
+            /* outline: 1px solid red; */
+            flex-grow: 1;
+            color: #fff;
+            overflow: scroll;
+        }
+        .sideBar .middle::-webkit-scrollbar {
+            display: none;
+        }
+        .sideBar .middle ul.side-menu li.menu-item{
+            width: 100%;
+            box-sizing: border-box;
+            /* outline: 1px solid red; */
+            /* display: flex; */
+            /* flex-wrap: nowrap; */
+            margin: 30px 0px;
+            padding: 0px 10px;
+            
+        }
+        .sideBar .middle ul.side-menu li.menu-item a {
+            width: 100%;
+            /* display: inline-block; */
+            display: flex;
+            /* justify-content: space-between; */
+            outline: 1px solid red;
+            padding:10px 10px 10px 10px ;
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+            
+        }
+
+        .sideBar .middle ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            position: relative;
+            display: inline-block;
+            /* letter-spacing: 2px; */
+        }
+        .sideBar .middle ul.side-menu li.menu-item a .fa-solid {
+            padding-right: 10px;
+        }
+        /* 向下箭頭 */
+        .sideBar .middle ul li a .fa-chevron-down {
+            /* padding-left: 20px; */
+            cursor: pointer;
+            transition: .3s ;
+            position: relative;
+            margin-left: auto;
+
+        }
+
+        .sideBar .middle ul.side-menu li.menu-item  ul {
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        .sideBar .middle ul.side-menu li.menu-item  ul li a{
+            display: inline-block;
+            width: 100%;
+            padding-left: 50px;
+            /* margin-bottom: 10px; */
+
+        }
+
+        .sideBar .bottom {
+            /* outline: 1px solid red; */
+            display: flex;
+        }
+
+        .sideBar .bottom button.close-open {
+            border: none;
+            background-color: transparent;
+            margin: 15px;
+            color: #fff;
+            font-size: 20px;
+            
+        }
+
+        .rotate {
+            transform: scaleY(-1);
+            transition: .3s ;
+        }
+
+        .bottom button.close-open {
+            cursor: pointer;
+        }
+
+        #menu-switch {
+            display: none;
+        }
+
+        ul.sub-menu li {
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        ul.sub-menu li:hover,
+        .sideBar .middle ul.side-menu li a:hover {
+            /* color: #2c40b2bb; */
+            color: #fff;
+            background-color: #2882e97c;
+        }
+
+
+        @media screen and (max-width:639px) {
+            .Host-Center-Container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 55px 1fr;
+                grid-template-areas: 
+                        "header"
+                        "content";
+            }
+            .sideBar {
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                opacity: 0.5;
+                left: -100%;
+                transition: .3s;
+            }
+
+            .sideBar .middle ul.side-menu li.menu-item{
+            width: 100%;
+            margin: 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+        }
+            .sideBar .middle ul.side-menu li.menu-item a {
+                padding-left: 50px ;
+                padding-bottom: 5px;
+            }
+            .sub-menu {
+                width: 100%;
+                padding-bottom: 0px;
+                box-sizing: border-box;
+
+            }
+            #menu-switch:checked ~ .Host-Center-Container .sideBar {
+                    opacity: 1;
+                    left: 0;
+                }
+
+            .header .leftSide .createBtn {
+                display: none;
+            }
+
+            .sideBar .bottom button.close-open {
+                display: none;
+            }
+            .sideBar .bottom button.createBtn {
+                width: 90%;
+                margin: 0 auto;
+                margin: 20px;
+            }    
+
+            ul.sub-menu {
+                /* padding-left: 50px; */
+                margin-left: 32px;
+            }
+
+        }
+
+        /* 小 */
+        @media screen and (min-width:640px) and (max-width: 1023px) {
+            .Host-Center-Container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 55px 1fr;
+                grid-template-areas: 
+                        "header"
+                        "content";
+            }
+            
+
+            .header .leftSide .createBtn {
+                display: none;
+            }
+            .sideBar {
+                width: 300px;
+                box-shadow: rgba(94, 95, 95, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+                /* display: none; */
+                position: absolute;
+                height: 100vh;
+                opacity: 0.5;
+                left: -100%;
+                transition: .3s;
+            }
+
+            #menu-switch:checked ~ .Host-Center-Container .sideBar {
+                opacity: 1;
+                left: 0;
+            }
+            #menu-switch:checked ~ .Host-Center-Container .header,
+            #menu-switch:checked ~ .Host-Center-Container .content
+            {
+                transition: .3s;
+                background-color:#6665657e;
+            }
+
+            /* .sideBar .bottom button {
+                display: none;
+            } */
+            .sideBar .bottom button.close-open {
+                display: none;
+            }
+            .sideBar .bottom button.createBtn {
+                width: 90%;
+                margin: 0 auto;
+                margin: 20px;
+            }
+
+
+        }
+
+        @media screen and (min-width:1024px) {
+            .Host-Center-Container {
+                grid-template-columns: 224px auto;
+                grid-template-rows: 55px 1fr;
+                grid-template-areas: 
+                    "sideBar header"
+                    "sideBar content";
+            }
+            .header button.hamburger-btn {
+                display: none;
+            }
+
+            .header img.logo {
+                display: none;
+            }
+            .sideBar {
+                box-shadow: rgba(145, 146, 146, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+                z-index: 10;
+            }
+            .sideBar .top .cross {
+                display: none;
+            }
+
+            .sideBar .bottom button.createBtn {
+                display: none;
+            }
+            
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="menu-switch">
+    <div class="Host-Center-Container">
+        <div class="header">
+            <button class="hamburger-btn">
+                <label for="menu-switch"><i class="fa-solid fa-bars"></i></label>
+            </button>
+            <a href="#"><img  class="logo" src="../logos and search/host-logo.png" alt=""></a>
+            <div class="leftSide">
+                <div class="userphoto">
+                    <img src="../logos and search/profile-photo.png" alt="" >
+                </div>
+                <button class="createBtn">辦活動</button>  
+            </div>
+        </div>
+        <div class="sideBar">
+            <div class="top">
+                <a href="#"><img src="../logos and search/host-logo.png" alt="" style="height: 70px;"></a>
+                <div class="cross"><label for="menu-switch"><i class="fa-solid fa-xmark"></i></label></div>
+            </div>
+            <div class="middle">
+                <ul class="side-menu">
+                    <li class="menu-item">
+                        <a href="#">
+                            <i class="fa-solid fa-calendar-days"></i>活動列表
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                            <a href="#" >
+                                <i class="fa-solid fa-sack-dollar"></i>加值管理
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                        
+                        <!-- <ul class="sub-menu">
+                            <li><a href="">摘星計畫</a></li>
+                            <li><a href="">購買EP</a></li>
+                            <li><a href="">EP購買記錄</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">
+                            <i class="fa-solid fa-chart-line"></i>數據中心
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">
+                            <i class="fa-solid fa-circle-info"></i>服務介紹
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <button class="close-open"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="createBtn">辦活動</button>
+            </div>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+
+    <script src="/ Dashboard.js"></script>
+</body>
+</html>

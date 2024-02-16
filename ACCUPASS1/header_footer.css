@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@200&display=swap");
+*{
+    /* color: #; */
+}
+html,body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #eaeaea;
+}
+header {
+    background: linear-gradient(to bottom, #4091ef, #B5D7FF);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+header .container {
+    /* outline: 1px solid black; */
+    display: flex;
+    align-items: center;
+    width: 58%;
+    justify-content: space-between;
+    height: 52px;
+    font-size: 18px;
+    color: #fff;
+}
+.step {
+    font-weight: 500;
+}
+.step span{
+    color: #faf5f5;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+header .container a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: .3s;
+}
+header .container a:hover {
+    color:#e6e5e5;
+}
+
+.content {
+    width: 100%;
+    margin: 40px auto;
+    flex-grow: 1;
+}
+
+.footer .footer-container {
+    background-color: #545353;
+    color: #9f9b9b;
+    
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.footer-container p {
+    padding-right:10px ;
+}
+
+
+        /* header and footer */
+        @media screen and (max-width: 767px) {
+            header .container a {
+                display: none;
+            }
+            header .container {
+                justify-content: center;
+            }
+
+            .content .wrap .container {
+
+            }
+            .footer-container p {
+                display: block;
+                text-align: center;
+            }
+            .footer-container {
+                text-align: center;
+                display: block;
+                justify-content: center;
+            }
+        }
